@@ -1,0 +1,290 @@
+/* General page styling */
+body {
+    background-color: #111;
+    background-image: url("images/fone.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    transition: background-color 0.3s ease, background-position 1s ease;
+}
+
+body:hover {
+    background-position: center center;
+    transition: background-position 1s ease;
+}
+
+/* Navbar styling */
+.nav_bar {
+    background: linear-gradient(45deg, #FFC24A, #E5B136);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 999;
+}
+
+/* Company logo and text */
+.company {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.company img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.company-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.company-text h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.company-text hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #424040;
+    margin: 5px 0;
+}
+
+.company-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.language-selector {
+    margin-left: 20px;
+}
+
+.language-selector select {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #FFC24A;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Menu styling */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.4s ease;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu.active {
+    animation: slideDown 0.5s ease forwards;
+}
+
+/* Contacts section styling */
+.contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts button {
+    background-color: #424040;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contacts button img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+}
+
+.contacts button:hover {
+    background-color: #E5B136;
+    transform: scale(1.1);
+}
+
+.contacts button:last-child {
+    background-color: #424040;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contacts button:last-child:hover {
+    background-color: #FFC24A;
+    transform: scale(1.1);
+}
+
+/* Home section styling */
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    color: white;
+}
+
+.Home h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.Home h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.Home button {
+    background: linear-gradient(45deg, #FFC24A, #E5B136);
+    color: black;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.Home button img {
+    width: 15px;
+    height: 15px;
+}
+
+.Home button:hover {
+    background-color: #E5B136;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile-specific navbar styles */
+.menu-toggle {
+    display: none;
+    background-color: #FFC24A;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.menu.active {
+    display: flex;
+    opacity: 1;
+    max-height: 300px; /* Высота меню при открытии */
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .nav_bar {
+        flex-direction: row;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        opacity: 1;
+        max-height: none;
+    }
+
+    .menu a {
+        font-size: 18px;
+        margin-right: 30px;
+    }
+
+    .contacts button:last-child {
+        padding: 15px 25px;
+        font-size: 17px;
+    }
+}
