@@ -84,60 +84,6 @@ body:hover {
     color: white;
 }
 
-/* Menu styling */
-.menu {
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    opacity: 1;
-}
-
-.menu a {
-    text-decoration: none;
-    color: black;
-    margin-right: 20px;
-    font-size: 18px;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.menu a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: black;
-    transition: width 0.4s ease;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-}
-
-.menu a:hover::after {
-    width: 100%;
-}
-
-.menu a:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
-
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.menu.active {
-    animation: slideDown 0.5s ease forwards;
-}
-
 /* Contacts section styling */
 .contacts {
     display: flex;
@@ -265,22 +211,6 @@ body:hover {
 @media (min-width: 1200px) {
     .nav_bar {
         flex-direction: row;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: row;
-        opacity: 1;
-        max-height: none;
-    }
-
-    .menu a {
-        font-size: 18px;
-        margin-right: 30px;
     }
 
     .contacts button:last-child {
