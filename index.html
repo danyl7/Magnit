@@ -17,13 +17,13 @@
             </div>
         </div>
         <div class="contacts">
-            <button><img src="./images/phone.png" alt="Phone"></button>
-            <button><img src="./images/email.png" alt="Email"></button>
-            <button><img src="./images/instagram.png" alt="Instagram"></button>
-            <button><img src="./images/telegram.png" alt="Telegram"></button>
-            <button><img src="./images/facebook.png" alt="Facebook"></button>
-            <button><img src="./images/tik-tok.png" alt="TikTok"></button>
-            <button><img src="./images/youtube.png" alt="youtube"></button>
+            <button onclick="confirmNavigation('+123456789', 'phone')"><img src="./images/phone.png" alt="Phone"></button>
+            <button onclick="confirmNavigation('mailto:email@example.com', 'email')"><img src="./images/email.png" alt="Email"></button>
+            <button onclick="confirmNavigation('https://instagram.com/yourprofile', 'link')"><img src="./images/instagram.png" alt="Instagram"></button>
+            <button onclick="confirmNavigation('https://telegram.me/yourprofile', 'link')"><img src="./images/telegram.png" alt="Telegram"></button>
+            <button onclick="confirmNavigation('https://facebook.com/yourprofile', 'link')"><img src="./images/facebook.png" alt="Facebook"></button>
+            <button onclick="confirmNavigation('https://tiktok.com/@yourprofile', 'link')"><img src="./images/tik-tok.png" alt="TikTok"></button>
+            <button onclick="confirmNavigation('https://youtube.com/yourchannel', 'link')"><img src="./images/youtube.png" alt="youtube"></button>
             <button id="btn-consultation">Консультация</button>
         </div>
     </div>
@@ -32,6 +32,18 @@
             <option value="uk">Українська</option>
             <option value="ru">Русский</option>
         </select>
+    </div>
+
+    <!-- Модальное окно подтверждения -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Подтверждение</h2>
+            <p id="confirmMessage">Вы уверены, что хотите перейти?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="modal-btn">Да</button>
+                <button id="confirmNo" class="modal-btn">Нет</button>
+            </div>
+        </div>
     </div>
 
     <div class="Home">

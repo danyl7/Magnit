@@ -55,3 +55,49 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('language-select').addEventListener('change', (event) => {
     setLanguage(event.target.value);
 });
+
+// Переменные для модального окна
+const confirmModal = document.getElementById('confirmModal');
+const confirmMessage = document.getElementById('confirmMessage');
+const confirmYes = document.getElementById('confirmYes');
+const confirmNo = document.getElementById('confirmNo');
+
+// Функция для открытия модального окна с сообщением
+function openModal(message, url, type) {
+    confirmMessage.textContent = message;
+    confirmModal.style.display = 'flex';
+
+    // Действие при нажатии "Да"
+    confirmYes.onclick = function() {
+        if (type === 'phone') {
+            window.location.href = `tel:${url}`;
+        } else {
+            window.open(url, '_blank');
+        }
+        confirmModal.style.display = 'none'; // Закрыть окно после действия
+    };
+
+    // Закрытие окна при нажатии "Нет"
+    confirmNo.onclick = function() {
+        confirmModal.style.display = 'none';
+    };
+}
+
+// Функция для показа кастомного подтверждающего окна
+function confirmNavigation(url, type) {
+    let message = '';
+    if (type === 'phone') {
+        message = 'Вы точно хотите позвонить?';
+    } else {
+        message = `Вы точно хотите перейти на сайт ${url}?`;
+    }
+
+    openModal(message, url, type);
+}
+
+// Закрытие модального окна при клике вне его
+window.onclick = function(event) {
+    if (event.target === confirmModal) {
+        confirmModal.style.display = 'none';
+    }
+};

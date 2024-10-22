@@ -15,6 +15,65 @@
         transition: background-position 1s ease;
     }
 
+    /* Стили модального окна */
+    .modal {
+        display: none; /* Окно скрыто по умолчанию */
+        position: fixed;
+        z-index: 1000; /* Высокий приоритет для отображения поверх всего */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+        background-color: #dbaa47; /* Основной цвет сайта */
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 300px;
+    }
+
+    .modal-content h2 {
+        margin-bottom: 15px;
+        color: #111;
+        font-size: 24px;
+        color: white;
+    }
+
+    .modal-content p {
+        color: #111;
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .modal-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .modal-btn {
+        background-color: #FFC24A; /* Цвет кнопок, немного темнее основного */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .modal-btn:hover {
+        background-color: #d49e30;
+        transform: scale(1.05);
+    }
+
     /* Navbar styling */
     .nav_bar {
         background: linear-gradient(45deg, #FFC24A, #E5B136);
