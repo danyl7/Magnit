@@ -141,9 +141,14 @@ document.getElementById('send-email').addEventListener('click', () => {
     const message = document.getElementById('message').value;
 
     if (email && name && message) {
-        alert(`Sending email to: ${email}, Name: ${name}, Surname: ${surname}, Message: ${message}`);
-        document.getElementById('confirm').classList.add('hidden'); // Close modal after sending
+        const subject = encodeURIComponent(`Письмо от ${name} ${surname}`);
+        const body = encodeURIComponent(`Сообщение: ${message}\n\nОтправлено с почты: ${email}`);
+        
+        // Создаем ссылку для mailto
+        const mailtoLink = `mailto:irfed@ukr.net?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink; // Открываем почтовый клиент
+        document.getElementById('confirm').classList.add('hidden'); // Закрываем модальное окно
     } else {
-        alert("Please fill out all fields.");
+        alert("Пожалуйста, заполните все поля.");
     }
 });
