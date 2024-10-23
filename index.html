@@ -33,19 +33,6 @@
             <option value="ru">Русский</option>
         </select>
     </div>
-
-    <!-- Модальное окно подтверждения -->
-    <div id="confirmModal" class="modal">
-        <div class="modal-content">
-            <h2>Подтверждение</h2>
-            <p id="confirmMessage">Вы уверены, что хотите перейти?</p>
-            <div class="modal-buttons">
-                <button id="confirmYes" class="modal-btn">Да</button>
-                <button id="confirmNo" class="modal-btn">Нет</button>
-            </div>
-        </div>
-    </div>
-
     <div class="Home">
         <h1 id="main-heading">РОЗРОБКА ДИЗАЙНУ ІНТЕР’ЄРУ</h1>
         <h2 id="sub-heading">Ремонт квартир, будинків та комерційних приміщень</h2>
@@ -53,7 +40,39 @@
             Прорахувати вартість <img src="images/right-arrow.png" alt="right-arrow">
         </button>
     </div>
-
+    <div id="confirm" class="hidden">
+        <div class="modal-content">
+            <h1 id="confirm-title">Подтверждение</h1>
+    
+            <!-- Phone Confirmation -->
+            <div id="phone" class="hidden">
+                <p id="phone-text">Вы хотите сделать звонок на номер:</p>
+                <h2 id="phone-number"></h2>
+            </div>
+    
+            <!-- Email Confirmation -->
+            <div id="email" class="hidden">
+                <p id="email-text">Вы хотите отправить письмо:</p>
+                <input type="email" id="user-email" placeholder="Ваша почта">
+                <input type="text" id="user-name" placeholder="Ваше имя">
+                <input type="text" id="user-surname" placeholder="Ваша фамилия">
+                <textarea id="message" placeholder="Ваше сообщение"></textarea>
+                <button id="send-email">Отправить письмо</button>
+            </div>
+    
+            <!-- Link Confirmation -->
+            <div id="link" class="hidden">
+                <p id="link-text">Вы хотите открыть ссылку:</p>
+                <h2 id="link-url"></h2>
+            </div>
+    
+            <!-- Yes/No Buttons -->
+            <div id="yes_no">
+                <button id="confirm-btn">Подтвердить</button>
+                <button id="cancel-btn">Отмена</button>
+            </div>
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -15,65 +15,6 @@
         transition: background-position 1s ease;
     }
 
-    /* Стили модального окна */
-    .modal {
-        display: none; /* Окно скрыто по умолчанию */
-        position: fixed;
-        z-index: 1000; /* Высокий приоритет для отображения поверх всего */
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.3s ease;
-    }
-
-    .modal-content {
-        background-color: #dbaa47; /* Основной цвет сайта */
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        text-align: center;
-        width: 300px;
-    }
-
-    .modal-content h2 {
-        margin-bottom: 15px;
-        color: #111;
-        font-size: 24px;
-        color: white;
-    }
-
-    .modal-content p {
-        color: #111;
-        font-size: 16px;
-        margin-bottom: 20px;
-        color: white;
-    }
-
-    .modal-buttons {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .modal-btn {
-        background-color: #FFC24A; /* Цвет кнопок, немного темнее основного */
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .modal-btn:hover {
-        background-color: #d49e30;
-        transform: scale(1.05);
-    }
-
     /* Navbar styling */
     .nav_bar {
         background: linear-gradient(45deg, #FFC24A, #E5B136);
@@ -233,4 +174,95 @@
         background-color: #fca22d;
         transform: scale(1.05);
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal (Confirm) Styles */
+    #confirm.hidden {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #confirm {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal-content {
+        background: #222;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        animation: slide-down 0.5s ease-in-out;
+    }
+
+    @keyframes slide-down {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .modal-content h1 {
+        color: #FFC24A;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .modal-content p, .modal-content h2 {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .modal-content input, .modal-content textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+    }
+
+    .modal-content button {
+        background-color: #FFC24A;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .modal-content button:hover {
+        background-color: #fca22d;
+    }
+
+    /* Yes/No buttons */
+    #yes_no {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    #yes_no button {
+        width: 45%;
     }
